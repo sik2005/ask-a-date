@@ -1,0 +1,51 @@
+<!-- Gf2.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Include flatpickr library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Great! Let's Plan Something Special </h1> 
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://media.tenor.com/sLkOvbmv4SgAAAAi/tkthao219-bunny.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="date_container">
+        <label for="datePicker">Choose a Date:</label>
+        <input type="text" id="datePicker" placeholder="Select a date" />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="submitDateButton" onclick="submitDate()">Submit</button>
+        <button class="btn" id="goBackButton" onclick="goBack()">Go Back</button>
+      </div>
+    </div>
+
+    <script>
+      // Initialize flatpickr
+      flatpickr("#datePicker", {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+      });
+
+      function submitDate() {
+        const selectedDate = document.getElementById("datePicker").value;
+        console.log("Selected Date:", selectedDate);
+
+        // Redirect to the confirmation page
+        window.location.href = "ConfirmationPage.html";
+      }
+
+      function goBack() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
